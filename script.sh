@@ -1,0 +1,1 @@
+lsblk -n -I 8 -d  --raw --output NAME,SIZE | sed -ne 's/\..*//; s/ / /; s/: *+/ /; p' 2>/dev/null; echo $(echo TOTAL_NUMBER_OF_DISK; lsblk -n -I 8 -d  --raw --output NAME 2>/dev/null | wc -l ) > /textfile_collector/lmsensors.prom.$$ && mv /textfile_collector/lmsensors.prom.$$ /textfile_collector/lmsensors.prom
